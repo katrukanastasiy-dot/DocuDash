@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Data and uploads — НЕ КОММИТИМ!
+data/
+uploads/
+
+# Logs
+*.log
+
+# Secrets
+.env
