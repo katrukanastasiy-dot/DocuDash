@@ -14,10 +14,6 @@ import shutil
 DATA_FILE = "data/instructions.json"
 UPLOADS_DIR = "uploads"
 
-# Создание необходимых директорий
-os.makedirs("data", exist_ok=True)
-os.makedirs(UPLOADS_DIR, exist_ok=True)
-
 def load_data():
     """Загрузка данных из JSON файла"""
     if os.path.exists(DATA_FILE):
@@ -82,6 +78,10 @@ def is_outdated(last_update_date, months_threshold=12):
         return True
 
 def main():
+    # Создание необходимых директорий — ГАРАНТИРОВАННО ПЕРЕД ИСПОЛЬЗОВАНИЕМ
+    os.makedirs("data", exist_ok=True)
+    os.makedirs(UPLOADS_DIR, exist_ok=True)
+    
     st.title("📋 Дашборд управления должностными инструкциями")
     
     # Загрузка данных
